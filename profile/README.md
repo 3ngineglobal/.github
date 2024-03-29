@@ -1,6 +1,6 @@
 
 
-### **Moonraker: Comprehensive Strategy Execution Framework**
+## **Moonraker: Comprehensive Strategy Execution Framework**
 
 
 #### **Project Overview**
@@ -59,6 +59,23 @@ This project develops an exchange interface in Go, facilitating interaction betw
 - **Robust Account and Margin Management**:
   - Facilitates configuration of account types, leverage settings, and margin modes, allowing traders to optimize their trading approach based on risk preferences and market conditions.
   - Includes features for managing margin requirements and assessing account leverage impact, enhancing strategy resilience and capital efficiency.
+
+
+
+#### Specific exchange calls: Here's a summary of these calls along with their parameters:
+
+1. **place_active_order**: Called multiple times with various parameters, indicating placing an order on the exchange. Parameters vary but include symbol, side (Buy/Sell), size, price, and order_type (Market in one case).
+2. **cancel_open_order**: Used to cancel an open order, with parameters including order_id, symbol, and type (Buy/Sell).
+3. **cancel_all_open_orders**: A function call to cancel all open orders, with no parameters listed.
+4. **query_active_orders**: Likely a call to query current active orders, with no parameters listed.
+5. **replace_active_order**: Called with parameters for symbol, order_id, and price. This function probably replaces an existing order with a new price.
+6. **update_params**: Updates parameters, possibly related to trading strategies or operational settings.
+7. **update_class_vars**: Similar to update_params, but it might be more focused on internal class variables.
+8. **increment_order_depth** and **decrement_order_depth**: Functions that presumably adjust the depth of orders, with 'self' as the parameter, indicating they're adjusting the object's state.
+9. **fetch_data_in_chunks**: With a parameter for buffer_capacity, this might be for fetching market data or other relevant information in manageable sizes.
+10. **calculate_target_price_for_loss**: A specific function call with parameters for positionside, avg_entry, and positionsize, likely used for risk management or stop-loss calculations.
+
+
 
 #### **Dynamic Asset Mixing Capabilities**
 
@@ -136,7 +153,7 @@ For a grid strategy (as implemented in `grid.py`), the strategy engine would:
 - **Flexibility**: The interface allows for easy integration of various strategies with different trading styles.
 - **Scalability**: New strategies can be added without modifying the exchange interface, facilitating scalability and experimentation.
 
-### Bonus Spec: Goldfinger Research and Development Specification
+## Bonus Spec: Goldfinger Research and Development Specification
 
 #### **Background**
 
